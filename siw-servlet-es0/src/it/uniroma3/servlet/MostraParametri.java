@@ -8,23 +8,12 @@
         import java.io.IOException;
         import java.io.PrintWriter;
 
-@WebServlet("/processaDati")
+@WebServlet("/mostraDati")
 public class MostraParametri extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // gestione della RICHIESTA
-
-        // leggo i parametri
-        String nome = request.getParameter("firstname").toUpperCase();
-        String cognome = request.getParameter("lastname").toUpperCase();
-
-        // leggo (alcune) intestazioni http della richiesta
-        String address = (String)request.getRemoteAddr();
-        String host = (String)request.getRemoteHost();
-        String userAgent = request.getHeader("User-Agent");
-
         // gestione della RISPOSTA
 
         // preparo il tipo (HTML)
@@ -42,13 +31,13 @@ public class MostraParametri extends HttpServlet {
         out.println("<body>");
         out.println("<h1>Dati inseriti nella form</h1>");
         out.println("<ul>");
-        out.println("<li>Nome: <b>"+nome+"</b></li>");
-        out.println("<li>Cognome: <b>"+cognome+"</b></li>");
+        out.println("<li>Nome: <b>"+request.getAttribute("NOME")+"</b></li>");
+        out.println("<li>Cognome: <b>"+request.getAttribute("COGNOME")+"</b></li>");
         out.println("</ul>");
         out.println("<h2>Altri dati relativi alla richiesta</h2>");
-        out.println("<br />IP: <b>"+address+"</b>");
-        out.println("<br />Host: <b>"+host+"</b>");
-        out.println("<br />User Agent: <b>"+userAgent+"</b>");
+        out.println("<br />IP: <b>"+(String)request.getRemoteAddr()+"</b>");
+        out.println("<br />Host: <b>"+(String)request.getRemoteHost()+"</b>");
+        out.println("<br />User Agent: <b>"+request.getHeader("User-Agent")+"</b>");
         out.println("</body>\n</html> ");
 
     }
