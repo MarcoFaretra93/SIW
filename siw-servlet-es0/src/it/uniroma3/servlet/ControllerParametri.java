@@ -15,7 +15,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/controllerDati")
-public class LeggiParametri extends HttpServlet {
+public class ControllerParametri extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String nome = req.getParameter("firstname").toUpperCase();
@@ -26,7 +26,7 @@ public class LeggiParametri extends HttpServlet {
         session.setAttribute("COGNOME",cognome);
 
         ServletContext application = getServletContext();
-        RequestDispatcher rd = application.getRequestDispatcher(resp.encodeURL("/confermaDati"));
+        RequestDispatcher rd = application.getRequestDispatcher(resp.encodeURL("/ProcessaParametri.jsp"));
         rd.forward(req,resp);
         return;
     }
