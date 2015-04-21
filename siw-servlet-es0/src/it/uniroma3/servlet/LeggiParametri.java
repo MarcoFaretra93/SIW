@@ -26,7 +26,7 @@ public class LeggiParametri extends HttpServlet {
         session.setAttribute("COGNOME",cognome);
 
         ServletContext application = getServletContext();
-        RequestDispatcher rd = application.getRequestDispatcher("/confermaDati");
+        RequestDispatcher rd = application.getRequestDispatcher(resp.encodeURL("/confermaDati"));
         rd.forward(req,resp);
         return;
     }

@@ -42,7 +42,7 @@ public class ProcessaParametri extends HttpServlet {
         out.println("</ul>");
         out.println("<ul>");
         out.println("<li><a href=\"index.jsp\">Annulla</a></li>");
-        out.println("<li><a href=\"mostraDati\">Conferma</a></li>");
+        out.println("<li><a href=\""+resp.encodeURL("/mostraDati")+"\">Conferma</a></li>");
         out.println("</ul>");
         out.println("</body>\n</html> ");
     }
