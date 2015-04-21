@@ -11,7 +11,7 @@
     <title></title>
   </head>
   <body>
-        <form method="GET" action="processaDati">
+        <form method="GET" action="controllerDati">
             <label for="firstname">Name</label>
             <input id="firstname" type="text" name="firstname" placeholder="Nome">
 

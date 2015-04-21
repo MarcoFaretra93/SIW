@@ -7,6 +7,7 @@
         import javax.servlet.http.HttpServletResponse;
         import java.io.IOException;
         import java.io.PrintWriter;
+        import javax.servlet.http.HttpSession;
 
 @WebServlet("/mostraDati")
 public class MostraParametri extends HttpServlet {
@@ -15,6 +16,7 @@ public class MostraParametri extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // gestione della RISPOSTA
+        HttpSession session = request.getSession();
 
         // preparo il tipo (HTML)
         response.setContentType("text/html");
@@ -31,8 +33,8 @@ public class MostraParametri extends HttpServlet {
         out.println("<body>");
         out.println("<h1>Dati inseriti nella form</h1>");
         out.println("<ul>");
-        out.println("<li>Nome: <b>"+request.getAttribute("NOME")+"</b></li>");
-        out.println("<li>Cognome: <b>"+request.getAttribute("COGNOME")+"</b></li>");
+        out.println("<li>Nome: <b>"+session.getAttribute("NOME")+"</b></li>");
+        out.println("<li>Cognome: <b>"+session.getAttribute("COGNOME")+"</b></li>");
         out.println("</ul>");
         out.println("<h2>Altri dati relativi alla richiesta</h2>");
         out.println("<br />IP: <b>"+(String)request.getRemoteAddr()+"</b>");
