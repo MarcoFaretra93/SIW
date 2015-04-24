@@ -15,12 +15,12 @@
 <body>
     <h1>Dati inseriti nella form</h1>
     <ul>
-      <li>NOME: <b><% out.println(session.getAttribute("NOME")); %></b></li>
-      <li>COGNOME: <b><% out.println(session.getAttribute("COGNOME")); %></b></li>
+      <li>NOME: <b>${NOME}</b></li>
+      <li>COGNOME: <b>${COGNOME}</b></li>
     </ul>
     <h2>Altri dati relativi alla richiesta:</h2>
-    <br />IP: <b><% out.println(request.getRemoteAddr()); %></b>
-    <br />Host: <b><% out.println(request.getRemoteHost()); %></b>
-    <br />User Agent: <b><% out.println(request.getHeader("User-Agent")); %></b>
+    <br />IP: <b>${pageContext.request.remoteAddr}</b>
+    <br />Host: <b>${header["host"]}</b>
+    <br />User Agent: <b>${header["user-agent"]}</b>
 </body>
 </html>

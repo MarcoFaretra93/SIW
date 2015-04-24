@@ -15,8 +15,8 @@
 <body>
     <h1>Dati inseriti nella form</h1>
     <ul>
-      <li>Nome: <b><% out.println(session.getAttribute("NOME")); %></b></li>
-      <li>Cognome: <b><% out.println(session.getAttribute("COGNOME")); %></b></li>
+      <li>Nome: <b>${NOME}</b></li>
+      <li>Cognome: <b>${COGNOME}</b></li>
     </ul>
     <h2>Scegli:</h2>
     <ul>
