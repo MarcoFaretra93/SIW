@@ -13,24 +13,20 @@
   <body>
     <form method="get" action="processa">
       <label for="nomeProdotto">NomeProdotto</label>
-      <input id="nomeProdotto" type="text" name="nomeProdotto" placeholder="Nome" value="<% if(request.getAttribute("nomeCorrente")!= null) out.println(request.getAttribute("nomeCorrente")); %>">
-      <% if(request.getAttribute("nomeError")!=null) out.println(request.getAttribute("nomeError"));
-          else { out.println("");}%>
+      <input id="nomeProdotto" type="text" name="nomeProdotto" placeholder="Nome" value="${nomeCorrente}">
+      ${nomeError}
 
       <label for="prezzo">Prezzo</label>
-      <input id="prezzo" type="text" name="prezzo" placeholder="Prezzo" value="<% if(request.getAttribute("prezzoCorrente")!= null) out.println(request.getAttribute("prezzoCorrente")); %>">
-      <% if(request.getAttribute("prezzoError")!=null) out.println(request.getAttribute("prezzoError"));
-      else {out.println("");}%>
+      <input id="prezzo" type="text" name="prezzo" placeholder="Prezzo" value="${prezzoCorrente}">
+      ${prezzoError}
 
       <label for="descrizione">Descrizione</label>
-      <input id="descrizione" type="text" name="descrizione" placeholder="Descrizione" value="<% if(request.getAttribute("descrizioneCorrente")!= null) out.println(request.getAttribute("descrizioneCorrente")); %>">
-      <% if(request.getAttribute("descrizioneError")!=null) out.println(request.getAttribute("descrizioneError"));
-      else {out.println("");}%>
+      <input id="descrizione" type="text" name="descrizione" placeholder="Descrizione" value="${descrizioneCorrente}">
+      ${descrizioneError}
 
       <label for="codice">Codice</label>
-      <input id="codice" type="text" name="codice" placeholder="Codice" value="<% if(request.getAttribute("codiceCorrente")!= null) out.println(request.getAttribute("codiceCorrente")); %>">
-      <% if(request.getAttribute("codiceError")!=null) out.println(request.getAttribute("codiceError"));
-      else {out.println("");}%>
+      <input id="codice" type="text" name="codice" placeholder="Codice" value="${codiceCorrente}">
+      ${codiceError}
 
       <input type="submit" value="Invia">
     </form>

@@ -32,9 +32,11 @@ public class ProductController extends HttpServlet {
             req.setAttribute("nomeError","Campo obbligatorio");
         }
 
-        if(prezzo.isEmpty()) {
+        try {
+            Double.parseDouble(prezzo);
+        } catch(Exception e) {
             errori=true;
-            req.setAttribute("prezzoError","Campo Obbligatorio");
+            req.setAttribute("prezzoError","Deve essere un numero");
         }
 
         if(descrizione.isEmpty()) {
