@@ -24,7 +24,7 @@ public class ProductController extends HttpServlet {
 			throws ServletException, IOException {
 
 		String modelCommand = request.getPathInfo();
-		String actionName = "controller.action."+modelCommand.substring(1,2).toUpperCase()+modelCommand.substring(2);
+		String actionName = "controller.action."+modelCommand.substring(1);
 		String nextPage = null;
 		Action action;
 		try {
