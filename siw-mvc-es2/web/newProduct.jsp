@@ -5,7 +5,7 @@
   <title>Nuovo Prodotto</title>
 </head>
 <body>
-<form action="controller" method="get">
+<form action="controller/createProduct" method="get">
   <div>Nome: <input type="text" name="nomeProdotto" placeholder="Nome" value="${param.nomeProdotto}"/> ${nameErr}</div>
   <div>Codice: <input type="text" name="codice" placeholder="Codice" value="${param.codice}"/> ${codeErr}</div>
   <div>Prezzo: <input type="text" name="prezzo" placeholder="Prezzo" value="${param.prezzo}"/> ${priceErr}</div>

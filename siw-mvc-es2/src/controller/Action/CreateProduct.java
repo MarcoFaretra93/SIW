@@ -1,20 +1,17 @@
-package controller;
+package controller.Action;
 
 import controller.helper.HelperProduct;
-import model.ProductFacade;
 import model.Product;
+import model.ProductFacade;
 
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by marcofaretra on 27/04/15.
+ * Created by marcofaretra on 28/04/15.
  */
-
-public class Action {
+public class CreateProduct implements Action {
     HelperProduct helper = new HelperProduct();
-    public Action() {
-    }
-    public String perform(HttpServletRequest request) {
+    public String perform(HttpServletRequest request){
         if(helper.isValid(request)) {
             String nome=request.getParameter("nomeProdotto");
             Float prezzo=Float.parseFloat(request.getParameter("prezzo"));
