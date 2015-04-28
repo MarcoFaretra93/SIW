@@ -16,5 +16,6 @@
     <div><a href="">Lista di tutti i prodotti</a></div>
     <div><a href="">Ottieni un prodotto</a></div>
     <div><a href="">Cancella un prodotto</a></div>
+    ${action}
 </body>
 </html>
