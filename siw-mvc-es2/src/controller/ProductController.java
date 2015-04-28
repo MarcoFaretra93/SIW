@@ -34,8 +34,9 @@ public class ProductController extends HttpServlet {
 		catch (Exception e) {
 			nextPage="/index.jsp";
 		}
+		nextPage=response.encodeURL(nextPage);
 		ServletContext application = getServletContext();
-		RequestDispatcher rd = application.getRequestDispatcher(response.encodeURL(nextPage));
+		RequestDispatcher rd = application.getRequestDispatcher(nextPage);
 		rd.forward(request,response);
 		return;
 	}
