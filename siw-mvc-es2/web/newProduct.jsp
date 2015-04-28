@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,7 @@
   <title>Nuovo Prodotto</title>
 </head>
 <body>
-<form action="controller/createProduct" method="get">
+<form action="<c:url value="/controller/createProduct"/>" method="get">
   <div>Nome: <input type="text" name="nomeProdotto" placeholder="Nome" value="${param.nomeProdotto}"/> ${nameErr}</div>
   <div>Codice: <input type="text" name="codice" placeholder="Codice" value="${param.codice}"/> ${codeErr}</div>
   <div>Prezzo: <input type="text" name="prezzo" placeholder="Prezzo" value="${param.prezzo}"/> ${priceErr}</div>

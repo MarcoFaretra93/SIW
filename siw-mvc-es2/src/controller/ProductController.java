@@ -3,7 +3,7 @@ package controller; /**
  */
 
 
-import controller.Action.Action;
+import controller.action.Action;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.*;
 
 
 @WebServlet("/controller/*")
@@ -21,9 +22,9 @@ public class ProductController extends HttpServlet {
     @Override
  protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String modelCommand = request.getPathInfo();
-		String actionName = "controller.Action."+modelCommand.substring(1,2).toUpperCase()+modelCommand.substring(2);
-		request.setAttribute("action",actionName);
+		String actionName = "controller.action."+modelCommand.substring(1,2).toUpperCase()+modelCommand.substring(2);
 		String nextPage = null;
 		Action action;
 		try {
@@ -38,4 +39,6 @@ public class ProductController extends HttpServlet {
 		rd.forward(request,response);
 		return;
 	}
+
+
 }
