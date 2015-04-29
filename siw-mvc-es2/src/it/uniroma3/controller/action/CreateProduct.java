@@ -1,8 +1,8 @@
-package controller.action;
+package it.uniroma3.controller.action;
 
-import controller.helper.HelperProduct;
-import model.Product;
-import model.ProductFacade;
+import it.uniroma3.controller.helper.HelperProduct;
+import it.uniroma3.model.Product;
+import it.uniroma3.model.ProductFacade;
 
 import javax.servlet.http.HttpServletRequest;
 

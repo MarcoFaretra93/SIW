@@ -1,9 +1,9 @@
-package controller; /**
+package it.uniroma3.controller; /**
  * Created by marcofaretra on 21/04/15.
  */
 
 
-import controller.action.Action;
+import it.uniroma3.controller.action.Action;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,14 +16,14 @@ import java.io.IOException;
 
 
 @WebServlet("/controller/*")
-public class ProductController extends HttpServlet {
+//controller/createProduct -> CreateProduct
+public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
     @Override
  protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String modelCommand = request.getPathInfo();
-		String actionName = "controller.action."+modelCommand.substring(1,2).toUpperCase()+modelCommand.substring(2);
+		String actionName = path2action(request);
 		String nextPage = null;
 		Action action;
 		try {
@@ -40,5 +40,10 @@ public class ProductController extends HttpServlet {
 		return;
 	}
 
+	private String path2action(HttpServletRequest request) {
+		String modelCommand = request.getPathInfo();
+		String actionName = "it.uniroma3.controller.action."+modelCommand.substring(1,2).toUpperCase()+modelCommand.substring(2);
+		return actionName;
+	}
 
 }

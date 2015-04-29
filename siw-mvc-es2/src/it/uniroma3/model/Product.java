@@ -1,4 +1,4 @@
-package model;
+package it.uniroma3.model;
 
 /**
  * Created by marcofaretra on 25/04/15.

@@ -14,5 +14,6 @@
 <body>
     <div><a href="<c:url value="/newProduct.jsp"/>">Inserisci un nuovo prodotto</a></div>
     <div><a href="">Lista di tutti i prodotti</a></div>
+    ${action}
 </body>
 </html>
