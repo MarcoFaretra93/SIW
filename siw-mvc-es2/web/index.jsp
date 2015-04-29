@@ -13,6 +13,6 @@
 </head>
 <body>
     <div><a href="<c:url value="/newProduct.jsp"/>">Inserisci un nuovo prodotto</a></div>
-    <div><a href="<c:url value="/controller/GetAllProducts" />">Lista di tutti i prodotti</a></div>
+    <div><a href="">Lista di tutti i prodotti</a></div>
 </body>
 </html>

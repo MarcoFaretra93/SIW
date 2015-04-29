@@ -20,6 +20,7 @@
   <li>Prezzo: <b>${product.prezzo}</b></li>
   <li>Descrizione: <b>${product.descrizione}</b></li>
   <li>Codice: <b>${product.codice}</b></li>
+  <div><a href="index.jsp">Torna alla pagina principale</a></div>
 </ul>
 </body>
 </html>

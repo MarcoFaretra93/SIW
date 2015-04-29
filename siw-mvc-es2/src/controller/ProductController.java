@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
 
 
 @WebServlet("/controller/*")
@@ -24,7 +23,7 @@ public class ProductController extends HttpServlet {
 			throws ServletException, IOException {
 
 		String modelCommand = request.getPathInfo();
-		String actionName = "controller.action."+modelCommand.substring(1);
+		String actionName = "controller.action."+modelCommand.substring(1,2).toUpperCase()+modelCommand.substring(2);
 		String nextPage = null;
 		Action action;
 		try {
