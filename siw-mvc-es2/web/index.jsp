@@ -5,15 +5,20 @@
   Time: 11:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Scegli l'operazione che vuoi eseguire</title>
+    <meta charset="US-ASCII">
+    <title>siw-mvc-es2</title>
 </head>
 <body>
-    <div><a href="<c:url value="/newProduct.jsp"/>">Inserisci un nuovo prodotto</a></div>
-    <div><a href="">Lista di tutti i prodotti</a></div>
-    ${action}
+<h1>siw-mvc-es2</h1>
+<ul>
+    <li><a href="<c:url value="/newProduct.jsp" />">Insert a new product</a></li>
+    <li><a href="<c:url value="/controller/product.list" />">List all product</a></li>
+</ul>
+${action}
 </body>
 </html>

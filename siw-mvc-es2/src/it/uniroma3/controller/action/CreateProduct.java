@@ -10,19 +10,23 @@ import javax.servlet.http.HttpServletRequest;
  * Created by marcofaretra on 28/04/15.
  */
 public class CreateProduct implements Action {
-    HelperProduct helper = new HelperProduct();
-    public String perform(HttpServletRequest request){
-        if(helper.isValid(request)) {
-            String nome=request.getParameter("nomeProdotto");
-            Float prezzo=Float.parseFloat(request.getParameter("prezzo"));
-            String codice=request.getParameter("codice");
-            String descrizione=request.getParameter("descrizione");
+
+    public String perform(HttpServletRequest request) {
+
+        HelperProduct helper = new HelperProduct();
+
+        if (helper.isValid(request)) {
+            String name = request.getParameter("name");
+            String code = request.getParameter("code");
+            Float price = Float.parseFloat(request.getParameter("price"));
+            String description = request.getParameter("description");
+
             ProductFacade facade = new ProductFacade();
-            Product product=facade.createProduct(nome,codice,prezzo,descrizione);
-            request.setAttribute("product",product);
+            Product product = facade.createProduct(name, code, price, description);
+            request.setAttribute("product", product);
+
             return "/product.jsp";
-        }
-        else
+        } else
             return "/newProduct.jsp";
     }
 }

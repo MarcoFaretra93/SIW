@@ -7,29 +7,37 @@ package it.uniroma3.controller.helper;
 import javax.servlet.http.HttpServletRequest;
 
 public class HelperProduct {
+
     public boolean isValid(HttpServletRequest request) {
-        String nome = request.getParameter("nomeProdotto");
-        String price = request.getParameter("prezzo");
-        String code = request.getParameter("codice");
-        boolean errori=false;
 
-        if(nome.isEmpty()) {
-            errori=true;
-            request.setAttribute("nameErr","Campo obbligatorio");
-        }
+        String name = request.getParameter("name");
+        String code = request.getParameter("code");
+        String price = request.getParameter("price");
+        boolean errors = false;
 
-        if(code.isEmpty()) {
-            errori=true;
-            request.setAttribute("codeErr","Campo obbligatorio");
+        if ( name == null || name.equals("")) {
+            request.setAttribute("nameErr","Name is mandatory");
+            errors = true;
         }
 
-        try {
-            Double.parseDouble(price);
+        if ( code == null || code.equals("")) {
+            request.setAttribute("codeErr","Code is mandatory");
+            errors = true;
         }
-        catch (Exception e) {
-            errori=true;
-            request.setAttribute("priceErr","Deve essere un numero");
+
+        if ( price == null || price.equals("")) {
+            request.setAttribute("priceErr","Price is mandatory");
+            errors = true;
         }
-        return !errori;
+        else {
+            try{
+                Float.parseFloat(price);
+            }
+            catch (NumberFormatException e) {
+                request.setAttribute("priceErr","Price is must be a number");
+                errors = true;
+            }
+        }
+        return !errors;
     }
 }
